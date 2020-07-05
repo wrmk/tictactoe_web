@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<title>Game</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="/vendor/jquery.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+
+
+<table>
+	<%y=1%>
+	<% @r.each do |row| %>
+			<tr>
+				<%x=1%>	
+				<% row.each do |table| %>
+				<td>
+					<form action="/" method="post">
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary" value="<%="#{x}#{y}"%>" name="button"><%=table%></button>
+						</div>
+					</form>
+				</td>
+				<%x=x+1%>
+				<%end%>
+			</tr>
+		<%y=y+1%>
+	<%end%>
+</table>
+    
+  </body>
+
+<h2><%=@index%></h2>
+</html>
