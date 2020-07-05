@@ -1,6 +1,6 @@
  <!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<title>Game</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
@@ -11,21 +11,21 @@
 	    <!-- Include all compiled plugins (below), or include individual files as needed -->
 	    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-	</head>
+</head>
 
-	<body>
+<body>
 
 
 <table>
 	<%y=1%>
-	<% @r.each do |row| %>
+	<% @@r.each do |row| %>
 			<tr>
 				<%x=1%>	
 				<% row.each do |table| %>
 				<td>
 					<form action="/" method="post">
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary" value="<%="#{x}#{y}"%>" name="button"><%=table%></button>
+							<button type="submit" class="btn btn-primary" value="<%="#{x}"+" "+"#{y}"%>" name="button"><%=table%></button>
 						</div>
 					</form>
 				</td>
@@ -36,7 +36,7 @@
 	<%end%>
 </table>
     
-  </body>
+ </body>
 
 <h2><%=@index%></h2>
 </html>
