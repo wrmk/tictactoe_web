@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 
 
 def change_space index
-		# изменение выюанной пользователем ячейки
+		# изменение выбранной пользователем ячейки
 		@@r[index[1].to_i-1][index[0].to_i-1] = "+"
 
 		# проверка на заполненность игрового поля
@@ -23,8 +23,11 @@ def change_space index
 				y = rand(0..2)
 			end
 			@@r[x][y] = "0"	
+		else
+			#блокировка игрового поля когда все ячейки открыты
+			@disabled = 'disabled'
 		end
-
+		
 end
 
 def reset
