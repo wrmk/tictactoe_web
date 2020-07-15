@@ -3,8 +3,8 @@ require 'sinatra/reloader'
 
 
 def change_space index
-		# изменение выбранной пользователем ячейки
-		@@r[index[1].to_i-1][index[0].to_i-1] = "+"
+		# изменение выбранной пользователем ячейки если она является "X"
+		@@r[index[1].to_i-1][index[0].to_i-1] == "X" ? @@r[index[1].to_i-1][index[0].to_i-1] = "+" : return
 
 		# проверка на заполненность игрового поля
 		m = 0
