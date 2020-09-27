@@ -4,7 +4,7 @@ require 'sinatra/reloader'
 
 def change_space index
 		# изменение выбранной пользователем ячейки если она является "X"
-		@@r[index[1].to_i-1][index[0].to_i-1] == "X" ? @@r[index[1].to_i-1][index[0].to_i-1] = "+" : return
+		@@r[index[1]-1][index[0]-1] == "X" ? @@r[index[1]-1][index[0]-1] = "+" : return
 
 		# проверка на заполненность игрового поля
 		m = 0
@@ -27,6 +27,7 @@ def change_space index
 			#блокировка игрового поля когда все ячейки открыты
 			@disabled = 'disabled'
 		end
+
 		
 end
 
@@ -46,7 +47,8 @@ end
 
 post '/' do
 
-@index = params[:choose].split
+#преобразование строки в массив чисел
+@index = params[:choose].split.map(&:to_i)
 if @index != ""
 	change_space @index
 end
