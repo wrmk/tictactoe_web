@@ -20,14 +20,27 @@
 				<td>
 					<form action="/" method="post">
 						<div class="form-group">
-							<button style="width:40px;height:40px" type="submit" class="btn btn-primary" width="100px" value="<%="#{x}"+" "+"#{y}"%>" name="choose" <%=@disabled%> ><%=table%> </button>&nbsp;
+							<button style="width:40px;height:40px" 
+											type="submit" 
+
+											<%if table == 'X'%>
+												class="btn btn-primary"
+											<%else%> 
+												class="btn btn-success"
+											<%end%>
+											
+											width="100px" 
+											value="<%="#{x}"+" "+"#{y}"%>" 
+											name="choose" 
+											<%=@disabled%>> <%=table%> 
+							</button>&nbsp;
 						</div>
 					</form>
 				</td>
-				<%x=x+1%>
+				<%x+=1%>
 				<%end%>
 			</tr>
-		<%y=y+1%>
+		<%y+=1%>
 	<%end%>
 </table>
 
