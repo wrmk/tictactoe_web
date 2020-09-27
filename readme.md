@@ -9,4 +9,4 @@ create docker image:
 run container:
   $ docker run -p 80:4567 tictactoe
 
-open localhost page
+open localhost:4567 
